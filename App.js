@@ -1,19 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Image, TouchableOpacity, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Image, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.caixaI}>
       <Image style={styles.img} source={require ("./assets/android1.png")}/>
+      <Text style={styles.txt}>Novo Usuário</Text>
       </View>
       <View style={styles.caixa}>
+          <TextInput style={styles.input} placeholder={'Nome'}/>
           <TextInput style={styles.input} placeholder={'E-mail'}/>
           <TextInput style={styles.input} placeholder={'Senha'}/>
-          <TouchableOpacity style={styles.buttonE}><Text>Entrar</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.buttonN}><Text>Novo usuário</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.buttonEsc}><Text>Esqueci minha senha</Text></TouchableOpacity>
+          <TextInput style={styles.input} placeholder={'Confirme a Senha'}/>
+          <TouchableOpacity style={styles.button}><Text>Registrar</Text></TouchableOpacity>
       </View>
+      <StatusBar barStyle={'auto'}/>
     </SafeAreaView>
   );
 }
@@ -32,26 +34,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingLeft: 15,
   },
-  buttonE:{
+  button:{
     width: 300,
     height: 40,
     backgroundColor: '#80CC0E',
-    marginBottom: 30,
-    textAlign: 'center',
-    justifyContent: 'center'
-  },
-  buttonN:{
-    width: 300,
-    height: 30,
-    backgroundColor: '#80CC0E',
-    marginBottom: 15,
-    textAlign: 'center',
-    justifyContent: 'center'
-  },
-  buttonEsc:{
-    width: 300,
-    height: 30,
-    backgroundColor: '#CACACA',
     marginBottom: 30,
     textAlign: 'center',
     justifyContent: 'center'
@@ -73,5 +59,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  txt: {
+    fontSize: 30,
+    
   }
 });
